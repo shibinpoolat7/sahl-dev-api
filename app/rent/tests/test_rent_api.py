@@ -33,8 +33,8 @@ def create_vehicle(user, **params):
         'registration_no' : '234355',
         'daily_min_rate' : Decimal('10.00'),
         'daily_max_rate' : Decimal('10.00'),
-        'monthly_min_rate' : Decimal('10.00'),
-        'monthly_max_rate' : Decimal('10.00'),
+        'monthly_min_rate' : Decimal('233.44'),
+        'monthly_max_rate' : Decimal('1034.44'),
         'status' : 'Ready',
         
     }
@@ -111,6 +111,12 @@ class PrivateVehicleApiTests(TestCase):
             user=self.user,
             vehicle_name='Sample vehicle Name',
             vehicle_type=vehicle_type,
+            registration_no='234355',
+            daily_min_rate=Decimal('10.00'),
+            daily_max_rate=Decimal('10.00'),
+            monthly_min_rate=Decimal('233.44'),
+            monthly_max_rate=Decimal('1034.44'),
+            status='Ready',
         )
 
         payload = {'vehicle_name': 'New vehicle name'}
@@ -127,15 +133,21 @@ class PrivateVehicleApiTests(TestCase):
         """Test full update of vehicle."""
         vehicle = create_vehicle(
             user=self.user,
-            vehicle_name='Sample vehicle name',
+            vehicle_name='Sample vehicle Name',
             vehicle_type='Sample vehicle type',
-            daily_min_rate= Decimal('10.00'),
+            registration_no='234355',
+            daily_min_rate=Decimal('10.00'),
+            daily_max_rate=Decimal('10.00'),
+            monthly_min_rate=Decimal('233.44'),
+            monthly_max_rate=Decimal('1034.44'),
+            status='Ready',
         )
 
         payload = {
             'vehicle_name': 'New vehicle name',
             'vehicle_type': 'New vehicle type',
             'status': 'New',
+            'registration_no': '67868687',
             'daily_min_rate': Decimal('2.50'),
             'daily_max_rate' : Decimal('10.00'),
             'monthly_min_rate' : Decimal('10.00'),

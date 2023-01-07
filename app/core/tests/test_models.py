@@ -117,7 +117,7 @@ class ModelTests(TestCase):
             checkin_date='2022-12-12',
             checkout_date='',
             
-            customer=models.Customer.objects.get(customer_email='test@example.com'),
+            customer=models.Customer.objects.get(customer_name='Sample customer name'),
             vehicle=models.Vehicle.objects.get(vehicle_name='Sample vehicle name'),
         )
 
