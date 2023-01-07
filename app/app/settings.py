@@ -63,7 +63,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = []
+CORS_ALLOWED_ORIGINS = ['*']
 CORS_ALLOWED_ORIGINS.extend(
     filter(
         None,
