@@ -26,7 +26,9 @@ SECRET_KEY = SECRET_KEY = os.environ.get('SECRET_KEY', 'ssdddfsdsdsfdsfdsfsdfwer
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get('DEBUG', 0)))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS=['*']
+CORS_ORIGIN_ALLOW_ALL = True
+
 ALLOWED_HOSTS.extend(
     filter(
         None,
